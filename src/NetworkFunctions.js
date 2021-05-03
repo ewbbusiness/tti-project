@@ -6,7 +6,7 @@ export async function getFakeData() {
   try {
     const response = await fetch(apiURL + 'fakedata');
     const json = await response.json();
-    let data = typeof json.data[0];
+    let data = json.data;
     return data;
   } catch (err) {
     console.log(err);

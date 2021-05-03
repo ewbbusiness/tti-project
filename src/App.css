@@ -75,6 +75,8 @@
 }
 
 .App-body #textSpans #span {
+  font-weight: bold;
+  background-color: #ffff00;
   color: black;
   font-size: 15.5px;
   margin-right: 5px;
@@ -82,9 +84,12 @@
   margin-top: 5.2px;
 }
 
-.App-body #textSpans #span:hover {
-  font-weight: bold;
-  background-color: #FFFF00;
+.App-body #textSpans #spanNoHighlight {
+  color: black;
+  font-size: 15.5px;
+  margin-right: 5px;
+  float: left;
+  margin-top: 5.2px;
 }
 
 .App-body #textSpans img {
@@ -93,7 +98,7 @@
 }
 
 .App-body #savebutton {
-  background-color: white;
+  background-color: #ffffff;
   margin-top: 20px;
   width: 70%;
   padding: 12px;

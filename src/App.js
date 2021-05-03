@@ -14,11 +14,13 @@ import { getFakeData } from './NetworkFunctions';
 function App() {
   const [showTextInput, setShowTextInput] = useState(true);
   const [text, setText] = useState('');
-  const [selectedText, setSelectedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(-1);
   const [hoverOnText, setHoverOnText] = useState(false);
-  const [imageURLs, setImageURLS] = useState(undefined);
+  const [imageURLs, setImageURLs] = useState(undefined);
 
-  function saveTextInput() {
+  async function saveTextInput() {
+    const response = await getFakeData();
+    setImageURLs(response);
     if (text != '') {
       setShowTextInput(!showTextInput);
     } else {
@@ -48,17 +50,21 @@ function App() {
     var words = words.filter((d) => {
       return d !== '';
     });
-    return words.map((w) => (
-      <span
-        id='span'
-        onMouseEnter={() => setSelectedText(w.toLowerCase())}
-        onMouseOver={showImage}
-        onMouseLeave={hideImage}
-        onClick={() => alert(w)}
-      >
-        {w}
-      </span>
-    ));
+    return words.map((w, index) =>
+      imageURLs[index] !== '' ? (
+        <span
+          id='span'
+          onMouseEnter={() => setCurrentIndex(index)}
+          onMouseOver={showImage}
+          onMouseLeave={hideImage}
+          onClick={() => alert(w)}
+        >
+          {w}
+        </span>
+      ) : (
+        <span id='spanNoHighlight'>{w}</span>
+      )
+    );
   };
 
   return (
@@ -67,7 +73,6 @@ function App() {
         <h3>Engineers Without Borders – Cornell University</h3>
         <h4>A Text-to-Image Project by Daisy Shu and Sean Yu</h4>
         <h4>April 2021</h4>
-        <h4>{getFakeData()}</h4>
       </header>
       <div className='App-body'>
         {showTextInput ? (
@@ -87,7 +92,7 @@ function App() {
           <div id='textSpans'>
             <HoverableText text={text} handleClick={handleClick} />
             <img
-              src={selectedText == 'water' ? water : soil}
+              src={imageURLs !== undefined ? imageURLs[currentIndex] : null}
               style={{ display: hoverOnText ? 'inline' : 'none' }}
             />
           </div>
