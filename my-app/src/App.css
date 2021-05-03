@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: white;
+  min-height: 15vh;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  font-size: calc(10px + 2vmin);
+  width: 70%;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.App-header h3 {
+  background-color: white;
+  display: inline-block;
+  color: darkblue;
+  font-weight: bold;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.App-header h4 {
+  background-color: white;
+  font-size: calc(3px + 2vmin);
+  color: grey;
+  opacity: 0.6;
+  margin: auto;
+}
+
+.App-body {
+  background-color: white;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 100%;
+}
+
+.App-body #textfield {
+  background-color: lightblue;
+  opacity: 0.8;
+  margin-top: 20px;
+  width: 70%;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.App-body #textSpans {
+  background-color: aliceblue;
+  height: 487px;
+  width: 70%;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.App-body #textSpans #span {
+  color: black;
+  font-size: 15.5px;
+  margin-right: 5px;
+  float: left;
+  margin-top: 5.2px;
+}
+
+.App-body #textSpans #span:hover {
+  font-weight: bold;
+  background-color: #FFFF00;
+}
+
+.App-body #textSpans img {
+  width: 300px;
+  height: 200px;
+}
+
+.App-body #savebutton {
+  background-color: white;
+  margin-top: 20px;
+  width: 70%;
+  padding: 12px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
