@@ -9,19 +9,20 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import BackIcon from '@material-ui/icons/KeyboardBackspace';
+import { getFakeData } from './NetworkFunctions';
 
 function App() {
   const [showTextInput, setShowTextInput] = useState(true);
   const [text, setText] = useState('');
   const [selectedText, setSelectedText] = useState('');
   const [hoverOnText, setHoverOnText] = useState(false);
+  const [imageURLs, setImageURLS] = useState(undefined);
 
   function saveTextInput() {
     if (text != '') {
-      setShowTextInput(!showTextInput)
-    }
-    else {
-      alert('Please enter a non-empty set of instructions.')
+      setShowTextInput(!showTextInput);
+    } else {
+      alert('Please enter a non-empty set of instructions.');
     }
   }
 
@@ -66,6 +67,7 @@ function App() {
         <h3>Engineers Without Borders – Cornell University</h3>
         <h4>A Text-to-Image Project by Daisy Shu and Sean Yu</h4>
         <h4>April 2021</h4>
+        <h4>{getFakeData()}</h4>
       </header>
       <div className='App-body'>
         {showTextInput ? (
@@ -84,9 +86,12 @@ function App() {
         ) : (
           <div id='textSpans'>
             <HoverableText text={text} handleClick={handleClick} />
-            <img src={selectedText == 'water' ? water : soil} style={{display: hoverOnText ? "inline" : "none"}} />
+            <img
+              src={selectedText == 'water' ? water : soil}
+              style={{ display: hoverOnText ? 'inline' : 'none' }}
+            />
           </div>
-          )}
+        )}
         <div id='savebutton'>
           <Button
             className='savebutton'
