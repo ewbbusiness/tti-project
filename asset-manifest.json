@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tti-project/static/css/main.d38c2756.chunk.css",
-    "main.js": "/tti-project/static/js/main.865d753d.chunk.js",
-    "main.js.map": "/tti-project/static/js/main.865d753d.chunk.js.map",
+    "main.js": "/tti-project/static/js/main.d9e669e4.chunk.js",
+    "main.js.map": "/tti-project/static/js/main.d9e669e4.chunk.js.map",
     "runtime-main.js": "/tti-project/static/js/runtime-main.2da1d0a0.js",
     "runtime-main.js.map": "/tti-project/static/js/runtime-main.2da1d0a0.js.map",
     "static/js/2.b342b2e9.chunk.js": "/tti-project/static/js/2.b342b2e9.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.2da1d0a0.js",
     "static/js/2.b342b2e9.chunk.js",
     "static/css/main.d38c2756.chunk.css",
-    "static/js/main.865d753d.chunk.js"
+    "static/js/main.d9e669e4.chunk.js"
   ]
 }
