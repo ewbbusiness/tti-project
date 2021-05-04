@@ -9,20 +9,33 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import BackIcon from '@material-ui/icons/KeyboardBackspace';
-import { getFakeData } from './NetworkFunctions';
+import { getFakeData, getImageURLs } from './NetworkFunctions';
 
 function App() {
+  /** if true, shows the input page, if not, shows hoverablespans */
   const [showTextInput, setShowTextInput] = useState(true);
   const [text, setText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [hoverOnText, setHoverOnText] = useState(false);
   const [imageURLs, setImageURLs] = useState(undefined);
+  const [placeholderText, setPlaceholderText] = useState(
+    'Input your instructions here!'
+  );
 
   async function saveTextInput() {
-    const response = await getFakeData();
-    setImageURLs(response);
-    if (text != '') {
-      setShowTextInput(!showTextInput);
+    // guard
+    if (!showTextInput) {
+      setShowTextInput(true);
+      return;
+    }
+    // request server
+    if (text != '' && placeholderText != 'Loading...') {
+      setPlaceholderText('Loading...');
+      const response = await getImageURLs(text);
+      setPlaceholderText('Input your instructions here!');
+      setImageURLs(response);
+      console.log(response);
+      setShowTextInput(false);
     } else {
       alert('Please enter a non-empty set of instructions.');
     }
@@ -79,7 +92,7 @@ function App() {
           <div id='textfield'>
             <TextField
               className='textfield'
-              placeholder='Input your instructions here!'
+              placeholder={placeholderText}
               multiline
               rows={25}
               rowsMax={1000}
