@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 // let apiURL = 'https://ewb-tti.herokuapp.com/api/';
-let apiURL = 'https://e6b6fd53cff2.ngrok.io';
+let apiURL = 'https://da03f0ec80f7.ngrok.io';
 
 export async function getFakeData() {
   try {
