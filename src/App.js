@@ -84,8 +84,8 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h3>Engineers Without Borders – Cornell University</h3>
-        <h4>A Text-to-Image Project by Daisy Shu and Sean Yu</h4>
-        <h4>April 2021</h4>
+        <h4>Text-to-Image Project</h4>
+        {/* <h4>April 2021</h4> */}
       </header>
       <div className='App-body'>
         {showTextInput ? (
