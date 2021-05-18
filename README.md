@@ -1,4 +1,6 @@
-EWB tti project (frontend only)
+Engineers Without Borders – Cornell University
+Algorithmic Pictorial Translation: A Text-to-Image Program
+
 
 Initial setup:
 - install yarn https://classic.yarnpkg.com/en/docs/install/#mac-stable
